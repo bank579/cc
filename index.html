@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bitcoin Payment</title>
+  <title>iPhone Store</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,35 +15,41 @@
       text-align: center;
     }
 
-    .upload-form {
-      max-width: 400px;
-      margin: 0 auto;
+    .iphone-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .iphone-card {
+      border: 1px solid #ddd;
       padding: 20px;
-      border: 1px solid #ccc;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
-    .form-group {
-      margin-bottom: 20px;
+    .price{
+      color: rgb(150, 236, 20);
     }
 
-    .form-label {
+    .iphone-image {
       display: block;
+      margin-left: 10px;
+      max-width: 100px;
+    }
+
+    .iphone-name {
       font-weight: bold;
+      margin-top: 10px;
     }
 
-    .file-input {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    .iphone-price {
+      margin-top: 5px;
     }
 
-    .submit-btn {
+    .purchase-btn {
       display: block;
-      width: 100%;
+      width: 100px;
       padding: 10px;
       background-color: #007bff;
       color: #fff;
@@ -51,162 +57,183 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background-color 0.2s ease;
+      margin-bottom: 5px;
     }
 
-    .submit-btn:hover {
+    .purchase-btn:hover {
       background-color: #0056b3;
     }
-    img {
-  max-width: 100%;
-  height: auto;
-}
-
-    body {
-        font-family: Arial, sans-serif;
-        color: #3E8E41;
-        margin: 0;
-        padding: 0;
-        background-color:black;
-                min-height: 70vh;
-                width: 70vw;
-                align-items: center;
-                background-size: cover;
-                background-position: center;
-      }
-      
-      h1 {
-        text-align: center;
-      }
-      .purchase-button{
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-bottom: 10px;
-                padding-top: 10px;
-                color: blueviolet;
-                background-color: yellowgreen;
-                align-content: center;
-                display: block;
-                margin: auto;
-                margin-top: 50px;
-                width: 450px;
-                height: 70px;
-            }
-            .button-a:hover{
-                background-color: blue;
-                color: aquamarine;
-            }
-      
-      .payment-info {
-        margin: 20px;
-      }
-      
-      .qr-code {
-        text-align: center;
-      }
-      
-      .wallet-address {
-        margin-top: 20px;
-      }
-      
-      .wallet-address p {
-        margin: 0;
-      }
-      
-      .wallet-address input[type="text"] {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 5px;
-        margin-top: 5px;
-        font-size: 16px;
-      }
-      
-      .wallet-address button {
-        margin-top: 5px;
-        font-size: 16px;
-        padding: 5px 10px;
-        background-color: blue;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      
-      .wallet-address button:hover {
-        background-color: #8e3e3e;
-      }
-      .alert-a{
-        margin-left: 200px;
-        color: red;
-      }
-      .alert-b{
-        margin-left: 100px;
-        color: rgb(127, 225, 255);
-      }
-      .but2{
-        width: 400px;
-        padding-bottom: 10px;
-        padding-left: 70px;
-        padding-top: 10px;
-    
-      }
+    .head{
+      color: rgb(0, 255, 106);
+    }
   </style>
 </head>
 <body>
-  <h1>BITCOIN PAYMENT</h1>
-  <h2 class="alert-a">ALERT!!!</h2 >
-    <p class="alert-b">MAKE PAYMENT TO THE BITCOIN ADDRESS BELOW.THE PRICE OF THE CREDIT CARD IS IN THE DETAILS OF THE CARD.<br>
-    MAKE THE EXACT PAYMENT OF THE CC TO GET THE CREDIT CARD DETAILS.<br> THANK YOU!!!</p>
-    <label for="username">E-MAIL</label>
-			<input class="but2" type="text" id="amount" name="AMOUNT" placeholder="Enter the e-mail to receive the CC details. " required>
-    <div class="payment-info">
-      <div class="wallet-address">
-        <p>Wallet address:</p>
-        <input type="text" value="3EoLy9Cd1RCLeoVeFKB1cDWbXesqEfWMwy" id="wallet-address">
-        <button onclick="copyToClipboard()">COPY YOUR DEPOSIT ADDRESS</button>
-      </div>
-      <h3>DEAR CUSTOMER,<br> TAKE NOTE THAT YOU WILL RECEIVE CREDIT CARD DETAILS IMMEDIATELY AFTER SCREENSHOT OF PAYMENT SENT.</h3>
-       <div class="upload-form">
-    <form action="#" method="post" enctype="multipart/form-data">
-      <div class="form-group">
-        <label class="form-label" for="screenshot">Select a Screenshot:</label>
-        <input class="file-input" type="file" name="screenshot" id="screenshot" accept="image/*" required>
-      </div>
-      <button type="submit" class="submit-btn">Upload</button>
-    </form>
-  </div>
-      <button class="purchase-button">CLICK HERE AFTER PAYMENT SCREENSHOT UPLOAD TO RECEIVE CREDIT DETAILS.</button>
+  <header class="head">WELCOME TO THE BEST CREDIT CARDS SITE.</header>
+  <h1>AVAILABLE CREDIT CARDS</h1>
+  <div class="iphone-container">
+    <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Leonardo Huffman | Card <br>
+    Number: 5445 555**** | CVV: 785 | Price: $100 | Card Limit: $5000/Month |
+Address: Suffolk Grove 3203 | Country: Qatar</p>
+<p class="price">$100</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
     </div>
-   <script>
-    function copyToClipboard() {
-        var walletAddress = document.getElementById("wallet-address");
-        walletAddress.select();
-        document.execCommand("copy");
-        alert("Copied the wallet address: " + walletAddress.value);
-      }
-      const purchaseButtons = document.querySelectorAll('.purchase-button');
-purchaseButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    // Add code to handle purchase button click here
-    alert("Congratulations!!! We are verifying your payment screenshot. The Credit Card details would be sent to the e-mail you entered above after verification.")
-  });
-});
-      </script>
+    <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Baddie**** | Card <br>
+    Number: 5275 201**** | CVV: 821 | Price: $110 | Card Limit: $5500/Month |
+Address: NorthHampton 3203 | Country: United Kingdom</p>
+<p class="price">$110</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Leane**** | Card <br>
+    Number: 5235 200**** | CVV: 193 | Price: $105 | Card Limit: $5400/Month |
+Address: Maryland 217 St. | Country: United States</p>
+<p class="price">$105</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Joshua**** | Card <br>
+    Number: 4159 750**** | CVV: 785 | Price: $120 | Card Limit: $6000/Month |
+Address: Virginia Boks 213 | Country: United States</p>
+<p class="price">$120</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Nicholas Talaga | Card <br>
+    Number: 4782 002**** | CVV: 348 | Price: $150 | Card Limit: $7500/Month |
+Address: Harvey::IL | Country: United States</p>
+<p class="price">$150</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: George As**** | Card <br>
+    Number: 5215 341**** | CVV: 230 | Price: $200 | Card Limit: $9500/Month |
+Address: Mariners Rd::Crisfield | Country: United States</p>
+<p class="price">$200</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Dajuan**** | Card <br>
+    Number: 5215 634**** | CVV: 137 | Price: $180 | Card Limit: $7900/Month |
+Address: 1108 50th Street E | Country: United States</p>
+<p class="price">$180</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Gardiner**** | Card <br>
+    Number: 4266 8417**** | CVV: 619 | Price: $170 | Card Limit: $7800/Month |
+Address: 108 50th Street E MD | Country: United States</p>
+<p class="price">$170</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Lancelot**** | Card <br>
+    Number: 5375 401**** | CVV: 578 | Price: $140 | Card Limit: $6900/Month |
+Address: NorthHampton 3203 | Country: United Kingdom</p>
+<p class="price">$140</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Samson**** | Card <br>
+    Number: 5226 891**** | CVV: 137 | Price: $200 | Card Limit: $10000/Month |
+Address: london | Country: United Kingdom</p>
+<p class="price">$200</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Clifford**** | Card <br>
+    Number: 6134 201**** | CVV: 119 | Price: $210 | Card Limit: $11000/Month |
+Address: Cardiff | Country: United Kingdom</p>
+<p class="price">$210</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Emmanuel**** | Card <br>
+    Number: 2319 891**** | CVV: 132 | Price: $130 | Card Limit: $6500/Month |
+Address: NorthHampton 3203 | Country: United Kingdom</p>
+<p class="price">$130</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Malvin**** | Card <br>
+    Number: 3178 341**** | CVV: 591 | Price: $110 | Card Limit: $5500/Month |
+Address: NorthHampton 3203 | Country: United Kingdom</p>
+<p class="price">$110</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Prince**** | Card <br>
+    Number: 1197 451**** | CVV: 853 | Price: $190 | Card Limit: $10000/Month |
+Address: Springfield,illinois | Country: United States</p>
+<p class="price">$190</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Jude**** | Card <br>
+    Number: 8275 201**** | CVV: 821 | Price: $70 | Card Limit: $3500/Month |
+Address: Berlin | Country: Germany</p>
+<p class="price">$70</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Sherik**** | Card <br>
+    Number: 7345 201**** | CVV: 459 | Price: $500 | Card Limit: $76000/Month |
+Address: Al Warak | Country: Qatar</p>
+<p class="price">$500</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="master.jpeg" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Edene**** | Card <br>
+    Number: 4987 201**** | CVV: 821 | Price: $210 | Card Limit: $12000/Month |
+Address: Sedona,Arizona | Country: United States</p>
+<p class="price">$210</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+      <div class="iphone-card">
+        <h4 class="iphone-name">CARD TYPE</h4>
+      <img class="iphone-image" src="visa.png" alt="iPhone 11">
+      <p class="iphone-price">Account Holder: Peniel**** | Card <br>
+    Number: 5275 201**** | CVV: 821 | Price: $300 | Card Limit: $30500/Month |
+Address: Bar Harbor,Maine | Country: United States</p>
+<p class="price">$300</p>
+      <a href="bit.html" class="purchase-btn">Purchase</a>
+      </div>
+  </div>
 </body>
-</html>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>BTC Payment</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    
-
-
-    </style> 
-  </head>
-  <body>
-    <h1>BITCOIN PAYMENT</h1>
-    
-  </body>
 </html>
